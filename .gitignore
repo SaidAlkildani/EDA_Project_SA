@@ -144,3 +144,9 @@ models/*.pkl
 
 # vscode Stuff
 .vscode
+
+# Presentation files
+.pptx
+presentation/.pdf
+presentation/.pptx
+images/.html

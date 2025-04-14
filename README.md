@@ -1,7 +1,15 @@
-[![Shipping files](https://github.com/neuefische/ds-eda-project-template/actions/workflows/workflow-03.yml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/neuefische/ds-eda-project-template/actions/workflows/workflow-03.yml)
-# ds-project-template
 
-Template for creating ds simple projects
+# Exploratory Data Analysis - Said Alkildani
+
+This project aims to explore dataset of house sales in King County. My stakeholder is a buyer with a budget, 5 kids. They wish for a waterfront and an isolated neighborhood with less kids. 
+
+Three hypotheses were formed. Data was cleaned and analyzed to test these hypotheses. 
+
+There are three main notebooks in this repository:
+
+- data fetching notebook
+- data cleaning notebook
+- data analysis notebook
 
 ## Requirements
 
@@ -10,96 +18,38 @@ Template for creating ds simple projects
 
 ## Setup
 
-One of the first steps when starting any data science project is to create a virtual environment. For this project you have to create this environment from scratch yourself. However, you should be already familiar with the commands you will need to do so. The general workflow consists of... 
+A requirements text file is included to replicate the vitrual environment used for this project.
 
-* setting the python version locally to 3.11.3
-* creating a virtual environment using the `venv` module
-* activating your newly created environment 
-* upgrading `pip` (This step is not absolutely necessary, but will save you trouble when installing some packages.)
-* installing the required packages via `pip`
+## Key questions
+- Is there a seasonal pattern in house sales of properties with waterfronts?
+- Are houses with multiple floors more affordable than single-story houses?
+- Assuming number of bedrooms reflects number of kids. Do central houses have less kids? 
 
-At the end, you want to make sure that people who are interested in your project can create an identical environment on their own computer in order to be able to run your code without running into errors. Therefore you can create a `requirements file` and add it to your repository. You can create such a file by running the following command: 
+## Column Names and descriptions for King County Data Set
 
-```bash
-pip freeze > requirements.txt
-```
-
-*Note: In rare case such a requirements file created with `pip freeze` might not ensure that another (especially M1 chip) user can install and execute it properly. This can happen if libraries need to be compiled (e.g. SciPy). Then it also depends on environment variables and the actual system libraries.*
-
-### Unit testing (Optional)
-
-If you write python scripts for your data processing methods, you can also write unit tests. In order to run the tests execute in terminal:
-
-```bash
-pytest
-```
-
-This command will execute all the functions in your project that start with the word **test**.
-
-## Set up your Environment
-This repo contains a requirements.txt file with a list of all the packages and dependencies you will need.
-
-Before you can start with plotly in Jupyter Lab you have to install node.js (if you haven't done it before).
-- Check **Node version**  by run the following commands:
-    ```sh
-    node -v
-    ```
-    If you haven't installed it yet, begin at `step_1`. Otherwise, proceed to `step_2`.
-
-
-### **`macOS`** type the following commands : 
-
-
-- `Step_1:` Update Homebrew and install Node by following commands:
-    ```sh
-    brew update
-    brew install node
-    ```
-
-- `Step_2:` Install the virtual environment and the required packages by following commands:
-
-    ```BASH
-    pyenv local 3.11.3
-    python -m venv .venv
-    source .venv/bin/activate
-    pip install --upgrade pip
-    pip install -r requirements.txt
-    ```
-### **`WindowsOS`** type the following commands :
-
-
-- `Step_1:` Update Chocolatey and install Node by following commands:
-    ```sh
-    choco upgrade chocolatey
-    choco install nodejs
-    ```
-
-- `Step_2:` Install the virtual environment and the required packages by following commands.
-
-   For `PowerShell` CLI :
-
-    ```PowerShell
-    pyenv local 3.11.3
-    python -m venv .venv
-    .venv\Scripts\Activate.ps1
-    pip install --upgrade pip
-    pip install -r requirements.txt
-    ```
-
-    For `Git-Bash` CLI :
-  
-    ```BASH
-    pyenv local 3.11.3
-    python -m venv .venv
-    source .venv/Scripts/activate
-    pip install --upgrade pip
-    pip install -r requirements.txt
-    ```
- 
-
- **`Note:`**
-    If you encounter an error when trying to run `pip install --upgrade pip`, try using the following command:
-
-   ```Bash
-   python.exe -m pip install --upgrade pip
-   ```
+- **id** - unique identified for a house
+- **dateDate** - house was sold
+- **pricePrice** - is prediction target
+- **bedroomsNumber** - # of bedrooms
+- **bathroomsNumber** - # of bathrooms
+- **sqft_livingsquare** - footage of the home
+- **sqft_lotsquare** - footage of the lot
+- **floorsTotal** - floors (levels) in house
+- **waterfront** - House which has a view to a waterfront
+- **view** - quality of view
+- **condition** - How good the condition is ( Overall )
+- **grade** - overall grade given to the housing unit, based on King County grading system
+- **sqft_above** - square footage of house apart from basement
+- **sqft_basement** - square footage of the basement
+- **yr_built** - Built Year
+- **yr_renovated** - Year when house was renovated
+- **zipcode** - zip
+- **lat** - Latitude coordinate
+- **long** - Longitude coordinate
+- **sqft_living15** - The square footage of interior housing living space for the nearest 15 neighbors
+- **sqft_lot15** - The square footage of the land lots of the nearest 15 neighbors
+- **price_per_sqft** - The price of a square foot for each house, price is divided by lot+living spaces
+- **month** - month the house was sold
+- **season** - 1-3: winter, 4-6: spring, 7-9: summer, 10-12: fall
+- **neighborhood** - neighborhood number assigned to each zip code
+- **state** - like_new: old but renovated, old: older than 2010, new: built after 2010
